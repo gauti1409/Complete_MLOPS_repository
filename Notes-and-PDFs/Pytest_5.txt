@@ -1,0 +1,25 @@
+PYTEST NOTES:
+
+1. Innstallation: pip install PYTEST
+2. Test File Creation: Create files named test_*.py or *_test.py
+3. Test Function Naming: Start functions names with test_*
+4. Assertions: Use Python's bi+uilt in assert statement.
+5. Class Naming: Start class names with Test*
+6. Method Naming: Start method names with test_
+
+MASTERING PYTEST FIXTURES:
+
+1. Reusable Setup and Teardown: Fixtures defines functions executed before and after tests
+2. Scoping: Control fixture behaviour(function, module, session etc.)
+3. Parameterization: Run tests with different input data using fixtures. 
+
+
+LEVELING UP WITH PYTEST:
+1. MARKING: Test Marking: Ctaegorize tests with marks for selective execution
+2. EXPAND: Parameterization: Expand test coverage with variations
+3. INTEGRATE: Plugins: Integrate Tools for reporting, code coverage and more
+4. COMMAND: Command-line options: Customize test execution
+
+
+NOTE: Getting error while using - from main import add and from . import add
+Corrected by using - from .main import add. See the topic of relative imports in python. 

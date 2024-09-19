@@ -1,0 +1,71 @@
+Dataset: Loan Eligibility Dataset
+
+Problem Statement: A company wants to automate the loan eligibility detection based on the cusotmer details provided in Online Application form. 
+                   We need to classify each row as-whether a loan would be approved or not. 
+				   
+1. Challenges of working in Jupyter Notebook
+- We cannot use the ipynb notebook in prod environment because:
+a) difficult to debug 
+b) require changes in multiple changes in Notebook
+c) have lots of dependencies. 
+d) No modularity of the code. 
+e) Conflict of variable and functions
+f) Duplicate code snippets. 
+
+2. Solutions: 
+- Use the ML Model as a part of my software/product.
+- Version we have used in experiment/training needs to be same to be used in Production env. Solution: Create Virtual environment. 
+- Dependencies to be taken care. Solution: Create a requirement.txt file which contain packages and it's specific version. Cmd: pip freeze -r requirements.txt. 
+- We have to perform serialization and deserialization of the ML Models using joblib and pickle.
+
+3. Serialization and Deserialization:
+- It is a process in which the Python object hierarchy is converted into a byte stream. This means whatever the model object we have created, we will be storing it as a file. 
+- By creating the model as a file, it would help us in transferring that saved model from one environment to another environment. 
+- We can make the use of Joblib library and save the model object into an external file. And we can load that file as an object as well. 
+- In this way, we have found a solution where we can save the model as well as it's stored coefficients and the parameters into a file and load it from the file. 
+
+4. Whenever we are trying to save the model file and sharing it, along with sharing the model file, we have to create the TEST SCRIPT. This test script will do some basic test on 
+the model file to validate whether the model is working as per the expectation. Solution: Make use of Pytest to test the python code. 
+
+5. Python Packages: Self contained collections of Python modules, libraries and other resources that provide reusable functionality foir your projects. 
+
+6. Modularity: Packages break down complex code into manageable units, making projects easier to organize and maintain. 
+
+7. Collaboration: Packages facilitate code sharing and collaboration, saving time and preventing the need to "reinvent the wheel".
+
+8. Virtual environments: Create isolated Python environments to manage different sets of packages for different projects. Prevents conflicts arising from incompatible package 
+version between projects. Ensure projects are self contained and avoid unexpected behaviour due to dependency clashes. 
+
+
+HOW TO CREATE PYTHON PACKAGES AND PUBLISH IT ON PYPI WEBSITE: VERY VERY IMPORTANT VIDEO(VIDEO 54)
+9. Virtual environment steps: (See Video 54- Very very important video)
+- Create Virtual environment: conda create -n <venv_name> python=3.10
+- Activating virtual environment: conda activate <venv_name>
+- To deactivate the env: conda deactivate
+- Create a package now for which we have 2 dependencies: setuptools and twine. Use cmd: pip install setuptools twine.
+- Create the setup.py file once the installation of setuptools and twine is done. This setup.py file will be in the root directory of the project. 
+- In this setup.py file, we would go ahead and mention some details as what exactly is this package and how the overall package should work. 
+- The code in the setup.py file will create a distributable Python package. 
+- Whenever you are trying to push to any virtual environment or this package management, you have to ensure that your package name should be a unique one, else you are going 
+to get an error. 
+- Run command: python setup.py sdist. This is going to create the source distribution. 
+- Once python setup.py sdist command runs, then run the command: pip install dist/<setup_package_name>. 
+This will perform the installtion and install any necessary libraries required.
+- To upload the tar file in the dist folder to the test folder, we will be using the twine package.
+- Run the cmd: twine upload --repository-url <url> dist/<tar_file_name>. You can use test.pypi.org to test the Python packaging index. For prod: pypi.org.  
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10. BUILDING THE ML MODEL PACKAGE:
+
+- Here, we will focus on reusability, portability, fewer errors and automation of the ML Process. 
+1. Create a separate directory and inside it create the separate modules. Maintain separate files for preprocessing, data handling, manual config etc. 
+2. Build test cases as well. We need to build the test cases which will run the code file and that is going to verify the integrity. 
+3. Requires the creation fo certain files - setup.py; README.md; MANIFEST.in 
+
+Getting warning whne updated the joblib packaage:
+serWarning: Trying to unpickle estimator LogisticRegression from version 1.2.2 when using version 1.1.3. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+  https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+
+	
+

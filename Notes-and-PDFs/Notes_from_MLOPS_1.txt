@@ -1,0 +1,18 @@
+1. The goal of the MLOps is standardizing the deployment and the management of the machine learning model, which emphasizes the operationalization, release, monitoring, 
+performance tracking, reuse, maintenance as well as managing the ML artifacts. 
+
+2. STAGES OF MLOPS:
+
+- MLOPS is all about an automated environment and the processes for continuously delivering ML Projects to the production environment. 
+a) Data Collection and Preparation
+b) Model development and Training
+c) Machine Learning Service deployment
+d) Continuous and Monitoring stage
+
+3. SOURCE CODE: https://github.com/manifoldailearning/Complete-MLOps-Bootcamp-v2
+   SLIDE LINK : https://www.manifoldailearning.in/s/pages/mlops-bootcamp
+   
+4. PYTHON NOTES:
+
+i) List Comprehension: new_list = [expression for item in iterable if condition]
+

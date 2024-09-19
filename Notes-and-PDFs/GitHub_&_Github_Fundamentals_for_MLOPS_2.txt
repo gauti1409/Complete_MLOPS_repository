@@ -1,0 +1,113 @@
+1. Git is a technology designed for tracking chnages in a project and facilitating collaboration among multiple contributors.
+2. A Git-controlled project at it's core consists of a folder containing files, with Git monitoring changes made to these files.
+3. Git's primary function is to enable the storage of various versions of project work, earning it the tile of "Version Control System".
+ 
+4. Role of Git in MLOPS:
+
+i) Version Control: Git plays a crucial role in MLOPS by providing version control for ML models, code and configuration files. This ensures traceability and 
+reproducibility of experiments and model deployments.
+
+ii) Git facilitates collaboration among DS, DE and other team members, allowing them to work concurrently on different aspects of the ML Pipeline. It enables seamless
+integration of changes and helps manage collaborative development efforts. 
+
+iii) Experiment Tracking: Git, in conjunction with tools like git based platforms or MLFlow, helps track and manage ML experiments. This incldues recording parameters, 
+metrics and code versions making it easier to reproduce and compare results.
+
+iv) Branching for Experimentation: Git's branching feature allows for the creation of isolated branches to experiment with different model versions or parameter settings. 
+This supports a systematic approach to testing and refining models without affecting the main codebase. 
+
+v) Continuous Integration and Continuous Deployment (CI/CD): Git integrates with CI/CD Systems to automate the testing and deployment of ML MOdels. 
+This ensures that changes to the codebase are validated, and successful builds trigger automated deployment pipelines for model updates. 
+
+vi) Infrastrcuture as Code(IAC): Git is used to version control infrastructure configurations as code, ensuring consistency b/w dev, testing and prod environments. 
+This is particularly relevant in MLOPS, where the dev infra is a critical component. 
+
+vii) Artifact Management: Git is used in conjunction with artifact repositories to manage and version control artifacts such as trained models, datasets and other dependencies.
+
+viii) Auditability and Compliance: Git's commit history provides an audit trail for all changes made to the codebase and models. This is crucial for compliance purposes,
+allowing organizations to trace back and understand the evolution of models and associated code. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Important Configurations for Git:
+
+i) git version : to check the version of Git
+ii) git config --global --list: Gives you the username, email and branch which you are using to commit your local work into the repository.
+iii) git config --global user.name "Dhruv"
+iv) git config --global user.email "dhruv.gautam1409@gmail.com"
+v) git config --global init.defaultBranch main
+vi) git config --global --list
+vii) git init -b main
+viii) git status : tells you the files which are untracked in the working directory.
+ix) git add . : Copies the files from working area to the staging area
+x) git commit -m "" : Commits the files along with the message given in local repository.
+xi) git log: describes the commits that has happened in my local repo. 
+xii) git branch: This gives the lists of local branches that i have got in my current local repository. To create new branch: "git branch dev"
+xiii) git switch dev: switches to the dev branch from main branch.
+xiv) git checkout: to switch bakc to the main branch, you can use this or git switch.
+xv) git add . && git commit -m "message": two commands in one line
+xvi) Git Merge(Fast forward merging): git checkout main - switching into the branch that i want to merge into i.e. my target branch.Then provide command - "git merge dev".
+This can only be performed when i do not have any new commits that the branch that I am performing the merge into. 
+xvii) git log --all: This would display all the logs. 
+xviii) git checkout -b <branch-name>: This creates a new branch and switch to the new branch directly. 
+xix) git switch -c <branch-name>: switching to the new branch 	
+xx) PUSHING AN EXISTING REPO FROM THE COMMAND LINE:
+- git remote add origin <link>
+- git branch -M main
+- git push -u origin main 
+xxi) To check exacty URL of git: git remote -v
+xxii) git branch --all: displays all the branches we have in the repository.
+xxiii) to copy the latest files from repo to local directory: git clone <url> <directory-name>
+
+6. ".git" folder inside the project directory converst it into the local repository and it also tracks the additions, modifications and deletions which are happening within 
+that particular repository. To convert the project directory into the Local repo , run the "git init" command in the Git Bash window. 
+
+7. Working Directory: contains a set of files that represent a version of the project. 
+
+8. Staging Area: Draft space; Commit: A commit is a version of the project.
+
+9. Branches in Git: these are movable pointers to commit that we perform on the repository.
+
+10. To switch the branch, we will use 2 commands: "git switch dev" & "git checkout dev".
+
+11. Git Merging: Git merging refers to the process of combining changes from multiple branches to main branch. When you work on a project with multiple collaborators 
+or when you are managing different features or bug fixes in separate branches, you may need to merge those changes back into the main branch or the target branch. 
+
+i) Fast forward Merge: This occurs when the branch being merged has no new commits that the branch it is merging into. In a fast forward merge, Git simply moves the 
+branch pointer forward and no new merge commit is created. 
+ii) 3-way merge: This occurs when there are divergent changes in both the source and target branches. Git creates a new commit, known as a "merge commit", that has two 
+parent commits- one from the source branch and one from the target branch. The merge commit represents the combination of changes from both branches. 
+
+ii)3-way merge: 
+
+- Algorithm that Git uses to combine changes from two different branches.
+- This algo is also know as "3-way merge" because it involves 3 commits:
+a) Common Ancestor Commit(Base commit): The commit where the branches diverge. It represents the last commit that both branches had in common before they started to diverge.
+b) Branch A Commit: The commit representing the tip(latest commit) of the branch.
+c) Branch B Commit: The commit representing the tip of the other branch. 
+
+12. Checking out Commits:
+
+i) Checking out commits refers to the process of switching your codebase to a specific commit in a version control system.
+ii) When you check out a commit, you are essentially telling the VCS to set your working directory and codebase to the state it was in at the time of that specific moment. 
+iii) Uses: Debugging, Brnaching, Review History
+iv) REMEMBER: Always be cautious when checking out commits, especially if you have uncommitted changes in your working directory, as Git may require you to either commit, 
+stash or discard those changes before proceeding with the checkout. 
+v) To perform git checkout: "git checkout <commit-hash-key>"
+vi) NOTE: It is not at all recommended to make any changes when you are in the current state of detached state. That is when you are not on a branch because it is not suggested
+or it is not the best practice. In case you want to modify anything, it is always recommended to go ahead and create a branch and start working on that branch. That's the 
+overall idea of git checkout and it's importance.  
+
+13. REMOTE REPOSITORY:
+
+i) Remote repository will act as a central hub where developers can push as well as pull the changes. 
+ii) Push: It means adding the code changes to the repository.
+iii) Pull: It means getting the latest code from the repository. 
+
+14. To create a new branch and pushing the code through it:
+- git checkout -b <branch-name>
+- git push -u origin <branch-name>
+
+15. To delete a branch: 
+- git branch -d <branch-name>: This only deletes the branch from the local repo.
+- git push origin -d <branch-name>: This deletes the branch from the git repo as well. 

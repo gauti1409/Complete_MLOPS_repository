@@ -1,0 +1,23 @@
+1. YAML - YAML Ain't Markup Language
+2. It is a data serialization language that is often used for writing configuration files. It can also be used in conjunction with other programming languages.
+
+3. YAML Syntax:
+- Uses Python-style indentation to indicate nesting.
+- Whitespaces for indentation and Tab are not allowed.
+- No format symbols like braces, square brackets or quotation tags.
+- Uses .yml or .yaml file extension
+
+4. YAML Structure:
+- Structure of a YAML File is a map or a list.
+- Maps allow us to associate key-value pairs.
+- Keys are unique, and the order doesn't matter.
+- A map in YAML needs to be resolved before it can be closed, and a new map is created. 
+
+5. YAML Data Types:
+- Scalar values - Strings, Integers, dates, numbers and Boolean.
+- A list(collection of items) and it can start with a dash, with indentation separating the parent. 
+- New Map can be created by either increasing indentation level or by resolving the previous map.  
+
+6 # is used for writing the comments in YAML File. 
+
+7. We always use lowercase in the YAML File as best practices. 
