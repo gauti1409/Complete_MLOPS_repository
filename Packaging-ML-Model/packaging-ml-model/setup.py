@@ -9,8 +9,8 @@ from setuptools import find_packages, setup
 NAME = 'prediction_model'
 DESCRIPTION = 'Loan Prediction Model'
 URL = 'https://github.com/gauti1409/Complete_MLOPS_repository.git'
-EMAIL = 'murthy@manifoldailearning.in'
-AUTHOR = 'Nachiketh Murthy'
+EMAIL = 'dhruv.gautam1409@gmail.com'
+AUTHOR = 'Dhruv Gautam'
 REQUIRES_PYTHON = '>=3.7.0'
 
 pwd = os.path.abspath(os.path.dirname(__file__))
